@@ -1,0 +1,99 @@
+html,
+body {
+    height: 100%;
+}
+
+/* Verificar se é mobile */
+@media (max-width: 768px) {
+    #left-panel {
+        width: 0vh !important;
+        transition: 0.3s;
+    }
+
+    #filemanager {
+        left: -300px !important;
+        position: absolute;
+    }
+
+    #left-panel.active {
+        width: 30vh !important;
+    }
+
+    #left-panel.active #filemanager {
+        left: 0px !important;
+        position: relative;
+    }
+
+
+    #toggle-left-column-btn {
+        position: absolute;
+        top: 50%;
+        right: -30px;
+        transform: translateY(-50%);
+        z-index: 999;
+
+    }
+
+    #right-panel {
+        width: 0vh !important;
+        overflow: unset !important;
+        transition: 0.3s;
+    }
+
+    #right-panel.active {
+        width: 30vh !important;
+    }
+
+    #toggle-right-column-btn {
+        position: absolute;
+        top: 50%;
+        left: -30px;
+        transform: translateY(-50%);
+        z-index: 999;
+
+    }
+
+    #bottom-panel {
+        width: 100% !important;
+    }
+
+    .tree>ol li.file .file-actions {
+        display: block !important;
+    }
+
+    #canvas {
+        transition: 0.3s;
+        width: 100% !important;
+    }
+
+    #canvas::-webkit-scrollbar {
+        width: 12px;
+        /* ou qualquer outro tamanho que você preferir */
+    }
+
+    #right-panel.active~#canvas {
+        padding-right: 30vh !important;
+    }
+
+    #left-panel.active~#canvas {
+        margin-left: 30vh !important;
+    }
+
+    .drag-elements{
+        min-width: 90%!important;
+        top: 0px!important;
+        left: 3px!important;
+    }
+
+    #logo{
+        display: none;
+    }
+}
+
+#toggle-left-column-btn{
+    display: none;
+}
+
+#toggle-right-column-btn{
+    display: none;
+}
